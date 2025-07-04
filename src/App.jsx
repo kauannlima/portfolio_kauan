@@ -35,5 +35,3 @@ function App() {
 }
 
 export default App;
-
-//NÃO IREI USAR ROTAS PARA TORNAR O PORTFOLIO MAIS EFICIENTRE E LEVE POSSIVEL

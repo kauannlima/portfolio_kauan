@@ -1,12 +1,45 @@
-# React + Vite
+````markdown
+# Portfólio Kauan Lima
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o meu portfólio pessoal, desenvolvido com foco em performance e simplicidade.
 
-Currently, two official plugins are available:
+## Características principais
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Não utiliza rotas para garantir uma aplicação mais leve e rápida.
+- Navegação feita por âncoras e seções na mesma página.
+- Interface responsiva e moderna.
+- Projetos e informações apresentados de forma clara e direta.
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Tailwind CSS
+- JavaScript
+
+## Como rodar localmente
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
+````
+
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+3. Execute o projeto:
+
+   ```bash
+   npm start
+   ```
+
+---
+
+Desenvolvido por Kauan Lima.
+
+```
+
+```
