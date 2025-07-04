@@ -32,7 +32,7 @@ export const Contact = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-<div className="w-full px-4 sm:px-6 lg:px-8 max-w-full md:max-w-3xl xl:max-w-5xl mx-auto">
+<div className= px-4 max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             Entre em contato
           </h2>
