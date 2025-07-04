@@ -1,11 +1,18 @@
 export const About = () => {
-  const frontendSkills = ["React", "Tailwind CSS", "Bootstrap", "JavaScript"];
+  const frontendSkills = [
+    "React",
+    "Tailwind CSS",
+    "Bootstrap",
+    "TypeScript",
+    "JavaScript",
+  ];
 
   const backendSkills = [
     "Java",
     "Spring Boot",
     "Apache Struts 2",
     "Node.js",
+
     "PostgreSQL",
     "MySQL",
   ];
@@ -39,7 +46,7 @@ export const About = () => {
                     <span
                       key={key}
                       className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm 
-                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
+                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all"
                     >
                       {tech}
                     </span>
@@ -59,7 +66,7 @@ export const About = () => {
                     <span
                       key={key}
                       className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm 
-                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
+                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
                     >
                       {tech}
                     </span>
@@ -69,8 +76,7 @@ export const About = () => {
             </div>
           </div>
           <p className="text-sm text-gray-500 mb-2">
-            Clique em qualquer tecnologia para pesquisar no Google o que ela
-            significa.
+            Clique em uma tecnologia para saber mais sobre ela.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
