@@ -31,5 +31,6 @@ Este é o meu portfólio pessoal, focado em performance e simplicidade.
 
    ```
    npm start
-   Desenvolvido por Kauan Lima.
    ```
+
+   Desenvolvido por Kauan Lima.
