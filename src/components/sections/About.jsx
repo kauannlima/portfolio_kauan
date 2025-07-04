@@ -14,10 +14,10 @@ export const About = () => {
     "Spring Boot",
     "Apache Struts 2",
     "Node.js",
-
     "PostgreSQL",
     "MySQL",
   ];
+
   return (
     <section
       id="about"
@@ -37,54 +37,43 @@ export const About = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 -hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4 ">Front-end</h3>
+              <div className="rounded-xl p-6 transition-all">
+                <h3 className="text-xl font-bold mb-4">Front-end</h3>
                 <div className="flex flex-wrap gap-2">
                   {frontendSkills.map((tech, key) => (
-                    <a
-                      href={`https://www.google.com/search?q=O+que+%C3%A9+${tech}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <span
+                      key={key}
+                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all"
                     >
-                      <span
-                        key={key}
-                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm 
-                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all"
-                      >
-                        {tech}
-                      </span>
-                    </a>
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
-              <div className="rounded-xl p-6 -hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4 ">Back-end</h3>
+
+              <div className="rounded-xl p-6 transition-all">
+                <h3 className="text-xl font-bold mb-4">Back-end</h3>
                 <div className="flex flex-wrap gap-2">
                   {backendSkills.map((tech, key) => (
-                    <a
-                      href={`https://www.google.com/search?q=O+que+%C3%A9+${tech}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <span
+                      key={key}
+                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
                     >
-                      <span
-                        key={key}
-                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm 
-                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
-                      >
-                        {tech}
-                      </span>
-                    </a>
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-500 mb-2">
-              Clique em uma tecnologia para saber mais sobre ela.
+
+            <p className="text-sm text-gray-500 mt-4">
+              Estas são as principais tecnologias com as quais trabalho.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Educação </h3>
+              <h3 className="text-xl font-bold mb-4">🏫 Educação</h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>
                   <strong>
@@ -99,24 +88,24 @@ export const About = () => {
                 </li>
               </ul>
             </div>
+
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 💼 Experiências </h3>
+              <h3 className="text-xl font-bold mb-4">💼 Experiências</h3>
               <div className="space-y-4 text-gray-300">
                 <div>
                   <h4 className="font-semibold">
-                    Assistente de Help Desk em SOC Software de SST
-                    (2024-Present)
+                    Assistente de Help Desk em SOC Software de SST (2024–Presente)
                   </h4>
                   <p>
                     Auxilio clientes com dúvidas, abertura de chamados e suporte
-                    na resolução de erros e validações de regras
+                    na resolução de erros e validações de regras.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold">
                     Auxiliar de Navegação em Unimar Agenciamentos Marítimos
-                    (2022-2024)
+                    (2022–2024)
                   </h4>
                   <p>
                     Controlei posições de navios, gerenciei relatórios via EDI e
