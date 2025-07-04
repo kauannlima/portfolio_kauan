@@ -26,13 +26,13 @@ export const Contact = () => {
       .catch(() => alert("Ops! Algo deu errado. Por favor, tente novamente."));
   };
 
-  return (
+    return (
     <section
       id="contact"
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-<div className="w-full max-w-[720px] mx-auto px-4">
+        <div className="w-full px-4 sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             Entre em contato
           </h2>
@@ -111,7 +111,6 @@ export const Contact = () => {
               aria-label="LinkedIn"
               className="hover:text-blue-600"
             >
-              {/* Ícone LinkedIn SVG */}
               <svg
                 className="w-8 h-8"
                 fill="currentColor"
