@@ -32,5 +32,12 @@ Este é o meu portfólio pessoal, focado em performance e simplicidade.
    ```
    npm start
    ```
+## Link para o site em produção
+
+Acesse o [Portfólio](https://portfolio-kauan.vercel.app/)
+
+## Licença
+
+Este projeto é licenciado sob a [Licença MIT](LICENSE).
 
    Desenvolvido por Kauan Lima.
