@@ -1,4 +1,3 @@
-````markdown
 # Portfólio Kauan Lima
 
 Este é o meu portfólio pessoal, desenvolvido com foco em performance e simplicidade.
@@ -22,6 +21,7 @@ Este é o meu portfólio pessoal, desenvolvido com foco em performance e simplic
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
    ```
+
 ````
 
 2. Instale as dependências:
@@ -37,9 +37,8 @@ Este é o meu portfólio pessoal, desenvolvido com foco em performance e simplic
    ```
 
 ---
-
+```
 Desenvolvido por Kauan Lima.
 
-```
 
-```
+````
