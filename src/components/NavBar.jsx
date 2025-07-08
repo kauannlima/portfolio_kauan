@@ -4,11 +4,9 @@ import { FaSun, FaMoon } from "react-icons/fa";
 export const NavBar = ({ menuOpen, setMenuOpen }) => {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
-      return (
-        localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      );
+      const savedTheme = localStorage.getItem("theme");
+
+      return savedTheme === "dark";
     }
     return false;
   });
