@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Code, ExternalLink } from "lucide-react";
-
-const PRIMEIRO_PROJETO = "/src/assets/projects/Cardapio-Dev.png";
-const SEGUNDO_PROJETO = "/src/assets/projects/Encurta-Dev.png";
+import cardapioImg from "../../assets/projects/Cardapio-Dev.png";
+import encurtaImg from "../../assets/projects/Encurta-Dev.png";
 
 export const Projects = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -40,10 +39,10 @@ export const Projects = () => {
             {/* CARDÁPIO DEV */}
             <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
               <img
-                src={PRIMEIRO_PROJETO}
+                src={cardapioImg}
                 alt="Cardápio Dev"
                 className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
-                onClick={() => openModal(PRIMEIRO_PROJETO)}
+                onClick={() => openModal(cardapioImg)}
               />
               <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
                 Clique na imagem para ampliar
@@ -92,10 +91,10 @@ export const Projects = () => {
             {/* ENCURTADEV */}
             <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
               <img
-                src={SEGUNDO_PROJETO}
-                alt="EncurtaDev"
+                src={encurtaImg}
+                alt="Encurta Dev"
                 className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
-                onClick={() => openModal(SEGUNDO_PROJETO)}
+                onClick={() => openModal(encurtaImg)}
               />
               <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
                 Clique na imagem para ampliar
