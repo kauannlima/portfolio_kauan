@@ -24,16 +24,19 @@ export const About = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className=" max-w-3xl mx-auto px-4">
+        <div className=" max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             Sobre Mim
           </h2>
 
           <div className="glass rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
             <p className="text-gray-300 mb-6">
-              Tenho foco em Java com Spring Boot no back-end e React no
-              front-end, aplicando meus conhecimentos em projetos práticos que
-              compõem meu portfólio.
+              Tenho foco em desenvolvimento back-end com Java e Spring Boot,
+              assim como front-end com React. Estou constantemente estudando e
+              me aprimorando para me tornar um desenvolvedor fullstack completo.
+              Aplicando esses conhecimentos em projetos práticos e desafiadores,
+              construo um portfólio sólido que demonstra minha capacidade de
+              criar aplicações completas, eficientes e modernas
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -74,19 +77,30 @@ export const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4">🏫 Educação</h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>
-                  <strong>
-                    Curso Superior de Tecnologia (CST) em Análise e
-                    Desenvolvimento de Sistemas
-                  </strong>{" "}
-                  – Universidade Católica de Santos (2023–2025)
-                </li>
-                <li>
-                  <strong>Cursos relevantes:</strong> Spring Framework, Java OO,
-                  Front-end Web, Banco de Dados SQL, Controle de Versão com Git.
-                </li>
-              </ul>
+
+              <div className="text-gray-300 flex flex-col h-full pb-6">
+                <div>
+                  <p>
+                    <strong>
+                      Curso Superior de Tecnologia (CST) em Análise e
+                      Desenvolvimento de Sistemas
+                    </strong>{" "}
+                    – Universidade Católica de Santos (2023–2025)
+                  </p>
+                </div>
+                <div className="flex-grow"></div>{" "}
+                {/* isso empurra o botão para o final */}
+                <div>
+                  <a
+                    href="https://drive.google.com/drive/folders/1RhiSJDXJ7zUi8ABsQGX_QebzAxzt_fdE?usp=sharing"
+                    className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden 
+    hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] block w-[62%] md:w-[60%] text-center mb-10 mx-auto"
+                    target="_blank"
+                  >
+                    Ver Certificações
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
@@ -94,7 +108,8 @@ export const About = () => {
               <div className="space-y-4 text-gray-300">
                 <div>
                   <h4 className="font-semibold">
-                    Assistente de Help Desk em SOC Software de SST (2024–Presente)
+                    Assistente de Help Desk em SOC Software de SST
+                    (2024–Presente)
                   </h4>
                   <p>
                     Auxilio clientes com dúvidas, abertura de chamados e suporte
