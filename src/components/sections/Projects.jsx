@@ -2,8 +2,8 @@ import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Code, ExternalLink } from "lucide-react";
 
-const PRIMEIRO_PROJETO = "/images/Cardapio-Dev.png";
-const SEGUNDO_PROJETO = "/images/Encurta-Dev.png";
+const PRIMEIRO_PROJETO = "/src/assets/projects/Cardapio-Dev.png";
+const SEGUNDO_PROJETO = "/src/assets/projects/Encurta-Dev.png";
 
 export const Projects = () => {
   const [selectedImage, setSelectedImage] = useState(null);
