@@ -65,10 +65,7 @@ export const Projects = () => {
                   "Firestore",
                   "Auth Firebase",
                 ].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="px-3 py-1 text-sm font-medium bg-violet-100 text-violet-700 rounded-full"
-                  >
+                  <span key={key} className={techClasses}>
                     {tech}
                   </span>
                 ))}
@@ -78,7 +75,7 @@ export const Projects = () => {
                   href="https://github.com/kauannlima/miniblog"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
+                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                 >
                   <Code size={16} /> GitHub
                 </a>
@@ -86,7 +83,7 @@ export const Projects = () => {
                   href="https://miniblog-ivory.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
+                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                 >
                   <ExternalLink size={16} /> Ver online
                 </a>
