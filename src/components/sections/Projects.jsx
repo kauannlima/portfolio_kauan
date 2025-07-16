@@ -37,6 +37,62 @@ export const Projects = () => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* MINIBLOG */}
+            <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
+              <img
+                src={miniblog}
+                alt="MiniBlog"
+                className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
+                onClick={() => openModal(miniblog)}
+              />
+              <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
+                Clique na imagem para ampliar
+              </p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
+                MiniBlog
+              </h3>
+              <p className="text-gray-800 dark:text-gray-300 mb-4">
+                Blog minimalista feito com React e Firebase, com foco em CRUD de
+                posts, autenticação de usuários e uma interface simples,
+                responsiva e funcional. Conta com busca por tags, dashboard e
+                controle total dos conteúdos.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {[
+                  "React",
+                  "Firebase",
+                  "Tailwind CSS",
+                  "Firestore",
+                  "Auth Firebase",
+                ].map((tech, key) => (
+                  <span
+                    key={key}
+                    className="px-3 py-1 text-sm font-medium bg-violet-100 text-violet-700 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-4 items-center my-4">
+                <a
+                  href="https://github.com/kauannlima/miniblog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
+                >
+                  <Code size={16} /> GitHub
+                </a>
+                <a
+                  href="https://miniblog-ivory.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
+                >
+                  <ExternalLink size={16} /> Ver online
+                </a>
+              </div>
+            </div>
+
             {/* CARDÁPIO DEV */}
             <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
               <img
@@ -137,61 +193,6 @@ export const Projects = () => {
                   className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                 >
                   <Code size={16} /> Front-end
-                </a>
-              </div>
-            </div>
-            {/* MINIBLOG */}
-            <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
-              <img
-                src={miniblog}
-                alt="MiniBlog"
-                className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
-                onClick={() => openModal(miniblog)}
-              />
-              <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
-                Clique na imagem para ampliar
-              </p>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
-                MiniBlog
-              </h3>
-              <p className="text-gray-800 dark:text-gray-300 mb-4">
-                Blog minimalista feito com React e Firebase, com foco em CRUD de
-                posts, autenticação de usuários e uma interface simples,
-                responsiva e funcional. Conta com busca por tags, dashboard e
-                controle total dos conteúdos.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {[
-                  "React",
-                  "Firebase",
-                  "Tailwind CSS",
-                  "Firestore",
-                  "Auth Firebase",
-                ].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="px-3 py-1 text-sm font-medium bg-violet-100 text-violet-700 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-4 items-center my-4">
-                <a
-                  href="https://github.com/kauannlima/miniblog"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
-                >
-                  <Code size={16} /> GitHub
-                </a>
-                <a
-                  href="https://miniblog-ivory.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
-                >
-                  <ExternalLink size={16} /> Ver online
                 </a>
               </div>
             </div>
