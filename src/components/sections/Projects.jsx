@@ -6,7 +6,7 @@ import { Code, ExternalLink } from "lucide-react";
 import cardapioImg from "../../assets/projects/Cardapio-Dev.png";
 import encurtaImg from "../../assets/projects/Encurta-Dev.png";
 import miniblog from "../../assets/projects/Miniblog.png";
-import reactgram from "../../assets/projects/Reactgram.png";
+import reactgram from "../../assets/projects/ReactGram.png";
 
 export const Projects = () => {
   const [selectedImage, setSelectedImage] = useState(null);
