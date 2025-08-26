@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Code, ExternalLink } from "lucide-react";
+
+//Imagens
 import cardapioImg from "../../assets/projects/Cardapio-Dev.png";
 import encurtaImg from "../../assets/projects/Encurta-Dev.png";
 import miniblog from "../../assets/projects/Miniblog.png";
+import reactgram from "../../assets/projects/Reactgram.png";
 
 export const Projects = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -37,6 +40,55 @@ export const Projects = () => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* REACTGRAM */}
+            <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
+              <img
+                src={reactgram}
+                alt="Reactgram"
+                className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
+                onClick={() => openModal(reactgram)}
+              />
+              <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
+                Clique na imagem para ampliar
+              </p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
+                Reactgram
+              </h3>
+              <p className="text-gray-800 dark:text-gray-300 mb-4">
+                Aplicação de rede social feita com React e Node.js, permitindo
+                cadastro de usuários, upload de fotos, curtidas, comentários e
+                feed de postagens. Back-end com autenticação JWT e integração
+                com banco de dados.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {["React", "Node.js", "Express", "MongoDB", "JWT"].map(
+                  (tech, key) => (
+                    <span key={key} className={techClasses}>
+                      {tech}
+                    </span>
+                  )
+                )}
+              </div>
+              <div className="flex flex-wrap gap-4 items-center my-4">
+                <a
+                  href="https://github.com/kauannlima/reactgram-backend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                >
+                  <Code size={16} /> Back-end
+                </a>
+                <a
+                  href="https://github.com/kauannlima/reactgram-frontend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                >
+                  <Code size={16} /> Front-end
+                </a>
+              </div>
+            </div>
+
             {/* MINIBLOG */}
             <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
               <img
