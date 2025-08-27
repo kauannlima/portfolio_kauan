@@ -163,12 +163,12 @@ export const About = () => {
               <div className="space-y-4 text-gray-900 dark:text-gray-300">
                 <div>
                   <h4 className="font-semibold">
-                    Assistente de Help Desk em SOC Software de SST
-                    (2024–Presente)
+                    Assistente de Help Desk em SOC Software de SST (2024–2025)
                   </h4>
                   <p>
-                    Auxilio clientes com dúvidas, abertura de chamados e suporte
-                    na resolução de erros e validações de regras.
+                    Prestei suporte a clientes, esclarecendo dúvidas, abrindo
+                    chamados e auxiliando na resolução de erros e validações de
+                    regras de negócio.
                   </p>
                 </div>
 
