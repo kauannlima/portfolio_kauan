@@ -58,7 +58,7 @@ export const Home = () => {
             </a>
 
             <a
-              href="/Kauan-Lima-Curriculo-Dev-BackEnd.pdf"
+              href="/Kauan-Lima-Curriculo-Dev.pdf"
               download
               className="
                 border border-blue-900/60 text-blue-900
