@@ -1,7 +1,14 @@
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+  const navItems = [
+    { href: "#home", label: "Inicio" },
+    { href: "#about", label: "Sobre" },
+    { href: "#projects", label: "Projetos" },
+    { href: "#contact", label: "Contato" },
+  ];
+
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
+      className={`fixed top-0 left-0 z-40 flex w-full flex-col items-center justify-center bg-[rgba(6,16,23,0.9)] backdrop-blur-xl
         transition-all duration-300 ease-in-out
         ${
           menuOpen
@@ -12,24 +19,32 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     >
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute top-6 right-6 text-white text-3xl focus:outline-none cursor-pointer"
+        className="absolute right-6 top-6 cursor-pointer text-3xl text-white focus:outline-none"
         aria-label="Fechar o Menu"
       >
         &times;
       </button>
 
-      {["home", "about", "projects", "contact"].map((section) => (
+      <div className="mb-8 rounded-full border border-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">
+        Navegacao
+      </div>
+
+      {navItems.map((item) => (
         <a
-          key={section}
-          href={`#${section}`}
+          key={item.href}
+          href={item.href}
           onClick={() => setMenuOpen(false)}
-          className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300 ${
+          className={`my-4 transform text-2xl font-semibold tracking-[0.16em] text-white uppercase transition-transform duration-300 ${
             menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
           }`}
         >
-          {section.charAt(0).toUpperCase() + section.slice(1)}
+          {item.label}
         </a>
       ))}
+
+      <p className="mt-8 max-w-xs text-center text-sm leading-6 text-slate-400">
+        Portfolio com foco em projetos práticos, back-end consistente e UI sem excesso.
+      </p>
     </div>
   );
 };

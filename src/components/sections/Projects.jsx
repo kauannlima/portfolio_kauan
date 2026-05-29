@@ -20,41 +20,55 @@ export const Projects = () => {
   };
 
   const techClasses = `
-    bg-blue-900/10 text-blue-900 
-    dark:bg-blue-500/20 dark:text-blue-400 
-    py-1 px-3 rounded-full text-sm 
-    hover:bg-blue-900/20 dark:hover:bg-blue-500/30 
-    hover:shadow-[0_2px_8px_rgba(21,39,121,0.2)] dark:hover:shadow-[0_2px_8px_rgba(37,99,235,0.3)] 
-    transition
+    rounded-full border border-[#0f5c73]/15 bg-[#0f5c73]/8 px-3 py-1 text-sm text-[#0c4152]
+    transition hover:-translate-y-0.5 hover:border-[#0f5c73]/28 hover:bg-[#0f5c73]/12
+    dark:border-cyan-300/12 dark:bg-cyan-300/8 dark:text-cyan-100 dark:hover:border-cyan-300/25 dark:hover:bg-cyan-300/12
   `;
+
+  const projectCardClass =
+    "rounded-[2rem] border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-[#0f5c73]/20 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)] dark:hover:border-cyan-300/18";
+
+  const linkClass =
+    "flex items-center gap-1 text-[#0c4152] transition-colors hover:text-[#0f5c73] dark:text-cyan-200 dark:hover:text-cyan-100";
 
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center py-20 bg-white dark:bg-[#0a0a0a]"
+      className="flex min-h-screen items-center justify-center bg-transparent py-24"
     >
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-900 to-blue-950 dark:from-blue-600 dark:to-cyan-500 bg-clip-text text-transparent text-center">
+          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
+            Selecao recente
+          </p>
+          <h2 className="mb-4 bg-gradient-to-r from-[#0c4152] via-[#0f5c73] to-[#5a8ea0] bg-clip-text text-center text-3xl font-bold text-transparent dark:from-cyan-200 dark:via-cyan-300 dark:to-teal-300">
             Projetos em destaque
           </h2>
 
+          <p className="mx-auto mb-10 max-w-2xl text-center text-slate-600 dark:text-slate-300">
+            Projetos que representam melhor meu momento atual: APIs, produtos
+            completos e aplicacoes com preocupacao real com fluxo e uso.
+          </p>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* REACTGRAM */}
-            <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
+            <div className={projectCardClass}>
               <img
                 src={reactgram}
                 alt="Reactgram"
-                className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
+                className="mb-4 h-48 w-full cursor-pointer rounded-[1.5rem] object-cover"
                 onClick={() => openModal(reactgram)}
               />
-              <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                Full stack
+              </p>
+              <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
                 Clique na imagem para ampliar
               </p>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
+              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
                 Reactgram
               </h3>
-              <p className="text-gray-800 dark:text-gray-300 mb-4">
+              <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
                 Aplicação de rede social feita com React e Node.js, permitindo
                 cadastro de usuários, upload de fotos, curtidas, comentários e
                 feed de postagens. Back-end com autenticação JWT e integração
@@ -74,7 +88,7 @@ export const Projects = () => {
                   href="https://github.com/kauannlima/reactgram-backend"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={linkClass}
                 >
                   <Code size={16} /> Back-end
                 </a>
@@ -82,7 +96,7 @@ export const Projects = () => {
                   href="https://github.com/kauannlima/reactgram-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={linkClass}
                 >
                   <Code size={16} /> Front-end
                 </a>
@@ -90,20 +104,23 @@ export const Projects = () => {
             </div>
 
             {/* MINIBLOG */}
-            <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
+            <div className={projectCardClass}>
               <img
                 src={miniblog}
                 alt="MiniBlog"
-                className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
+                className="mb-4 h-48 w-full cursor-pointer rounded-[1.5rem] object-cover"
                 onClick={() => openModal(miniblog)}
               />
-              <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                Conteudo e auth
+              </p>
+              <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
                 Clique na imagem para ampliar
               </p>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
+              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
                 MiniBlog
               </h3>
-              <p className="text-gray-800 dark:text-gray-300 mb-4">
+              <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
                 Blog minimalista feito com React e Firebase, com foco em CRUD de
                 posts, autenticação de usuários e uma interface simples,
                 responsiva e funcional. Conta com busca por tags, dashboard e
@@ -127,7 +144,7 @@ export const Projects = () => {
                   href="https://github.com/kauannlima/miniblog"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={linkClass}
                 >
                   <Code size={16} /> GitHub
                 </a>
@@ -135,7 +152,7 @@ export const Projects = () => {
                   href="https://miniblog-ivory.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={linkClass}
                 >
                   <ExternalLink size={16} /> Ver online
                 </a>
@@ -143,20 +160,23 @@ export const Projects = () => {
             </div>
 
             {/* CARDÁPIO DEV */}
-            <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
+            <div className={projectCardClass}>
               <img
                 src={cardapioImg}
                 alt="Cardápio Dev"
-                className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
+                className="mb-4 h-48 w-full cursor-pointer rounded-[1.5rem] object-cover"
                 onClick={() => openModal(cardapioImg)}
               />
-              <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                Java + React
+              </p>
+              <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
                 Clique na imagem para ampliar
               </p>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
+              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
                 Cardápio Dev
               </h3>
-              <p className="text-gray-800 dark:text-gray-300 mb-4">
+              <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
                 Sistema de cardápio digital com funcionalidades para visualizar,
                 cadastrar, editar e remover itens como pratos e bebidas,
                 integrado a um backend via requisições HTTP.
@@ -179,7 +199,7 @@ export const Projects = () => {
                   href="https://github.com/kauannlima/backend-cardapio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={linkClass}
                 >
                   <Code size={16} /> Back-end
                 </a>
@@ -187,7 +207,7 @@ export const Projects = () => {
                   href="https://github.com/kauannlima/frontend-cardapio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={linkClass}
                 >
                   <Code size={16} /> Front-end
                 </a>
@@ -195,20 +215,23 @@ export const Projects = () => {
             </div>
 
             {/* ENCURTADEV */}
-            <div className="p-6 rounded-xl border border-gray-300 dark:border-white/10 bg-white/80 dark:bg-[#121212] hover:-translate-y-1 hover:border-blue-900/30 dark:hover:border-blue-600/30 shadow transition">
+            <div className={projectCardClass}>
               <img
                 src={encurtaImg}
                 alt="Encurta Dev"
-                className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
+                className="mb-4 h-48 w-full cursor-pointer rounded-[1.5rem] object-cover"
                 onClick={() => openModal(encurtaImg)}
               />
-              <p className="text-sm text-gray-700 dark:text-gray-400 italic mb-4">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                Utilitario web
+              </p>
+              <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
                 Clique na imagem para ampliar
               </p>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
+              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
                 EncurtaDev
               </h3>
-              <p className="text-gray-800 dark:text-gray-300 mb-4">
+              <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
                 EncurtaDev é uma aplicação web para encurtar URLs com geração
                 automática de QR Codes, interface simples e integração com o
                 back-end.
@@ -231,7 +254,7 @@ export const Projects = () => {
                   href="https://github.com/kauannlima/encurta-dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={linkClass}
                 >
                   <Code size={16} /> Back-end
                 </a>
@@ -239,7 +262,7 @@ export const Projects = () => {
                   href="https://github.com/kauannlima/encurta-dev-front"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={linkClass}
                 >
                   <Code size={16} /> Front-end
                 </a>
