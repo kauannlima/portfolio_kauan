@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { MoveUpRight, Github, Linkedin, Mail } from "lucide-react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -74,12 +74,12 @@ export const Contact = () => {
             voce pode me chamar pelo formulario ou pelos canais abaixo.
           </p>
 
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">
             <form
-              className="space-y-6 rounded-[2rem] border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]"
+              className="space-y-6 rounded-md border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]"
               onSubmit={handleSubmit}
             >
-              <input
+              <div className="flex gap-4"><input
                 type="text"
                 name="name"
                 id="name"
@@ -90,7 +90,7 @@ export const Contact = () => {
                 }
                 placeholder="Seu nome"
                 className="
-                  w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
+                  w-full rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
                   focus:outline-none focus:ring-2 focus:ring-[#0f5c73]/30
                   dark:border-white/8 dark:bg-white/4 dark:text-slate-200
                   dark:focus:ring-cyan-300/30
@@ -108,13 +108,13 @@ export const Contact = () => {
                 }
                 placeholder="Seu e-mail"
                 className="
-                  w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
+                  w-full rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
                   focus:outline-none focus:ring-2 focus:ring-[#0f5c73]/30
                   dark:border-white/8 dark:bg-white/4 dark:text-slate-200
                   dark:focus:ring-cyan-300/30
                   transition
                 "
-              />
+              /></div>
               <textarea
                 name="message"
                 id="message"
@@ -126,7 +126,7 @@ export const Contact = () => {
                 }
                 placeholder="Conte um pouco sobre o que voce precisa"
                 className="
-                  w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
+                  w-full resize-none rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
                   focus:outline-none focus:ring-2 focus:ring-[#0f5c73]/30
                   dark:border-white/8 dark:bg-white/4 dark:text-slate-200
                   dark:focus:ring-cyan-300/30
@@ -136,7 +136,7 @@ export const Contact = () => {
               <button
                 type="submit"
                 className="
-                  w-full rounded-full bg-[#0c4152] px-6 py-3 font-medium text-white
+                  w-full rounded-xl bg-[#0c4152] px-6 py-3 font-medium text-white
                   transition hover:-translate-y-0.5 hover:bg-[#0f5c73]
                   dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200
                 "
@@ -145,7 +145,7 @@ export const Contact = () => {
               </button>
             </form>
 
-            <div className="rounded-[2rem] border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]">
+            <div className="rounded-md border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]">
               <p className="mb-6 text-xs font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">
                 Contato direto
               </p>
@@ -159,10 +159,10 @@ export const Contact = () => {
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="group flex items-start justify-between gap-4 rounded-[1.5rem] border border-slate-200/80 bg-slate-50/80 p-4 transition hover:-translate-y-0.5 hover:border-[#0f5c73]/20 hover:bg-white dark:border-white/8 dark:bg-white/4 dark:hover:border-cyan-300/20 dark:hover:bg-white/6"
+                      className="group flex items-start justify-between gap-4 rounded-md border border-slate-200/80 bg-slate-50/80 p-4 transition hover:-translate-y-0.5 hover:border-[#0f5c73]/20 hover:bg-white dark:border-white/8 dark:bg-white/4 dark:hover:border-cyan-300/20 dark:hover:bg-white/6"
                     >
                       <div className="flex items-start gap-4">
-                        <div className="mt-0.5 rounded-2xl bg-[#0f5c73]/10 p-3 text-[#0c4152] dark:bg-cyan-300/10 dark:text-cyan-200">
+                        <div className="mt-0.5 rounded-md bg-[#0f5c73]/10 p-3 text-[#0c4152] dark:bg-cyan-300/10 dark:text-cyan-200">
                           <Icon size={18} />
                         </div>
                         <div>
@@ -174,8 +174,8 @@ export const Contact = () => {
                           </p>
                         </div>
                       </div>
-                      <ArrowUpRight
-                        size={18}
+                      <MoveUpRight
+                        size={20}
                         className="mt-1 text-slate-400 transition group-hover:text-[#0f5c73] dark:group-hover:text-cyan-200"
                       />
                     </a>
@@ -183,10 +183,7 @@ export const Contact = () => {
                 })}
               </div>
 
-              <div className="mt-6 rounded-[1.5rem] border border-dashed border-slate-300 bg-white/60 p-4 text-sm leading-7 text-slate-600 dark:border-white/10 dark:bg-white/3 dark:text-slate-300">
-                Respondo melhor por e-mail, mas LinkedIn e GitHub tambem ficam
-                abertos para networking e contexto tecnico.
-              </div>
+             
             </div>
           </div>
         </div>
