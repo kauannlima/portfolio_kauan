@@ -55,9 +55,10 @@ export const Contact = () => {
     >
       <RevealOnScroll>
         <div className="w-full max-w-5xl px-4">
-          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
+         {/* <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
             Vamos conversar
           </p>
+          */}
           <h2
             className="
     mb-4 text-3xl font-bold
@@ -174,10 +175,7 @@ export const Contact = () => {
                           </p>
                         </div>
                       </div>
-                      <MoveUpRight
-                        size={20}
-                        className="mt-1 text-slate-400 transition group-hover:text-[#0f5c73] dark:group-hover:text-cyan-200"
-                      />
+                      
                     </a>
                   );
                 })}

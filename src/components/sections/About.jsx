@@ -1,3 +1,4 @@
+import { BriefcaseBusiness, MoveUpRight, School } from "lucide-react";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
@@ -25,9 +26,7 @@ export const About = () => {
     >
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
-          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
-            Perfil profissional
-          </p>
+        
           <h2
             className="
               mb-4 text-center text-3xl font-bold
@@ -46,7 +45,7 @@ export const About = () => {
 
           <div
             className="
-              rounded-[2rem] border border-slate-200/80 bg-white/82 p-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-1 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]
+              rounded-md border border-slate-200/80 bg-white/82 p-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-1 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]
             "
           >
             <p className="mb-8 text-base leading-8 text-slate-700 dark:text-slate-300">
@@ -59,7 +58,7 @@ export const About = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-[1.5rem] border border-slate-200/80 bg-slate-50/80 p-6 transition-all dark:border-white/8 dark:bg-white/4">
+              <div className="rounded-md border border-slate-200/80 bg-slate-50/80 p-6 transition-all dark:border-white/8 dark:bg-white/4">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
                   Interface
                 </p>
@@ -71,7 +70,7 @@ export const About = () => {
                     <span
                       key={key}
                       className="
-                        rounded-full border border-[#0f5c73]/15 bg-[#0f5c73]/8 px-3 py-1 text-sm text-[#0c4152]
+                        rounded-2xl border border-[#0f5c73]/15 bg-[#0f5c73]/8 px-3 py-1 text-sm text-[#0c4152]
                         transition hover:-translate-y-0.5 hover:border-[#0f5c73]/30 hover:bg-[#0f5c73]/12
                         dark:border-cyan-300/12 dark:bg-cyan-300/8 dark:text-cyan-100 dark:hover:border-cyan-300/25 dark:hover:bg-cyan-300/12
                       "
@@ -82,7 +81,7 @@ export const About = () => {
                 </div>
               </div>
 
-              <div className="rounded-[1.5rem] border border-slate-200/80 bg-slate-50/80 p-6 transition-all dark:border-white/8 dark:bg-white/4">
+              <div className="rounded-md border border-slate-200/80 bg-slate-50/80 p-6 transition-all dark:border-white/8 dark:bg-white/4">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
                   Estrutura e dados
                 </p>
@@ -94,7 +93,7 @@ export const About = () => {
                     <span
                       key={key}
                       className="
-                        rounded-full border border-[#0f5c73]/15 bg-[#0f5c73]/8 px-3 py-1 text-sm text-[#0c4152]
+                        rounded-2xl border border-[#0f5c73]/15 bg-[#0f5c73]/8 px-3 py-1 text-sm text-[#0c4152]
                         transition hover:-translate-y-0.5 hover:border-[#0f5c73]/30 hover:bg-[#0f5c73]/12
                         dark:border-cyan-300/12 dark:bg-cyan-300/8 dark:text-cyan-100 dark:hover:border-cyan-300/25 dark:hover:bg-cyan-300/12
                       "
@@ -106,82 +105,83 @@ export const About = () => {
               </div>
             </div>
 
-            <p className="mt-6 text-sm text-slate-600 dark:text-slate-400">
-              Essas stacks concentram os projetos em que venho evoluindo com
-              mais consistencia nos ultimos ciclos.
-            </p>
+            
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-8">
             <div
-              className="
-                rounded-[2rem] border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-1 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]
+              className=" col-span-1 md:col-span-5
+               flex flex-col justify-between rounded-md border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-1 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]
               "
             >
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                Formacao
+         <div>     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                Formação
               </p>
-              <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-                🏫 Educação
+             <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100 flex gap-2">
+                 <School
+                        size={30}
+                        className=""
+                      /> Educação
               </h3>
 
-              <div className="flex h-full flex-col pb-2 text-slate-700 dark:text-slate-300">
+              <div className=" h-full  text-slate-700 dark:text-slate-300">
                 <div>
                   <p className="leading-7">
-                    <strong>
+                   <h4 className="font-semibold text-slate-900 dark:text-slate-100">
                       Curso Superior de Tecnologia (CST) em Análise e
                       Desenvolvimento de Sistemas
-                    </strong>{" "}
-                    – Universidade Católica de Santos (2023–2025)
+                    </h4>
+                                     <p className=" leading-7 text-sm text-slate-700 dark:text-slate-300">
+Universidade Católica de Santos (2023–2025)</p>
                   </p>
                 </div>
-                <div className="flex-grow"></div>{" "}
-                <div>
+                
+               
+              </div></div>
+               <div>
                   <a
                     href="https://drive.google.com/drive/folders/1RhiSJDXJ7zUi8ABsQGX_QebzAxzt_fdE?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                      mx-auto mt-8 block w-full rounded-full bg-[#0c4152] px-6 py-3 text-center font-medium text-white transition hover:-translate-y-0.5 hover:bg-[#0f5c73] sm:w-auto dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200
+                      mx-auto block w-full rounded-2xl bg-[#0c4152] px-6 py-3 text-center font-medium text-white transition hover:-translate-y-0.5 hover:bg-[#0f5c73] sm:w-auto dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200
                     "
                   >
                     Ver Certificações
                   </a>
                 </div>
-              </div>
             </div>
 
             <div
-              className="
-                rounded-[2rem] border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-1 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]
+              className="  col-span-1 md:col-span-7
+                rounded-md border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-1 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]
               "
             >
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                Vivencia profissional
-              </p>
-              <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-                💼 Experiências
+            
+             <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100 flex gap-2">
+                 <BriefcaseBusiness
+                        size={30}
+                        className=""
+                      /> Experiência Profissional
               </h3>
-              <div className="space-y-5 text-slate-700 dark:text-slate-300">
-                <div className="rounded-[1.25rem] border border-slate-200/70 bg-slate-50/80 p-4 dark:border-white/8 dark:bg-white/4">
-                  <h4 className="font-semibold">
-                    Assistente de Help Desk em SOC Software de SST (2024–2025)
+              <div className="space-y-6 ">
+                
+
+                <div className=" flex flex-col  ">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">
+                    Desenvolvedor Full Stack Júnior, Mamba Digital (2025–presente)
                   </h4>
-                  <p className="mt-2 leading-7">
-                    Prestei suporte a clientes, esclarecendo dúvidas, abrindo
-                    chamados e auxiliando na resolução de erros e validações de
-                    regras de negócio.
+                  <p className=" leading-7 text-sm text-slate-700 dark:text-slate-300">
+                    Atuação no desenvolvimento full stack com Node.js, Golang e React, participando da criação de sistemas internos e CRM. Experiência com arquitetura de sistemas, bancos de dados, integração de serviços (RabbitMQ/Kafka)
                   </p>
                 </div>
 
-                <div className="rounded-[1.25rem] border border-slate-200/70 bg-slate-50/80 p-4 dark:border-white/8 dark:bg-white/4">
-                  <h4 className="font-semibold">
-                    Auxiliar de Navegação em Unimar Agenciamentos Marítimos
-                    (2022–2024)
+                <div className=" flex flex-col ">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">
+                    Assistente de Help Desk em SOC Software de SST (2024–2025)
                   </h4>
-                  <p className="mt-2 leading-7">
-                    Controlei posições de navios, gerenciei relatórios via EDI e
-                    cuidei de transbordo, faturas e atualização de contêineres.
+                  <p className=" leading-7 text-sm text-slate-700 dark:text-slate-300">
+              Suporte ao cliente e análise de inconsistências no sistema, com abertura e acompanhamento de chamados. Apoio ao time de desenvolvimento, validação de regras de negócio e organização de demandas via Kanban.
                   </p>
                 </div>
               </div>

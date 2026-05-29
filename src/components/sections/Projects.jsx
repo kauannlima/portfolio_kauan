@@ -20,13 +20,13 @@ export const Projects = () => {
   };
 
   const techClasses = `
-    rounded-full border border-[#0f5c73]/15 bg-[#0f5c73]/8 px-3 py-1 text-sm text-[#0c4152]
+    rounded-2xl border border-[#0f5c73]/15 bg-[#0f5c73]/8 px-3 py-1 text-sm text-[#0c4152]
     transition hover:-translate-y-0.5 hover:border-[#0f5c73]/28 hover:bg-[#0f5c73]/12
     dark:border-cyan-300/12 dark:bg-cyan-300/8 dark:text-cyan-100 dark:hover:border-cyan-300/25 dark:hover:bg-cyan-300/12
   `;
 
   const projectCardClass =
-    "rounded-[2rem] border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-[#0f5c73]/20 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)] dark:hover:border-cyan-300/18";
+    "rounded-md border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-[#0f5c73]/20 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)] dark:hover:border-cyan-300/18";
 
   const linkClass =
     "flex items-center gap-1 text-[#0c4152] transition-colors hover:text-[#0f5c73] dark:text-cyan-200 dark:hover:text-cyan-100";
@@ -38,9 +38,7 @@ export const Projects = () => {
     >
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
-          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
-            Selecao recente
-          </p>
+         
           <h2 className="mb-4 bg-gradient-to-r from-[#0c4152] via-[#0f5c73] to-[#5a8ea0] bg-clip-text text-center text-3xl font-bold text-transparent dark:from-cyan-200 dark:via-cyan-300 dark:to-teal-300">
             Projetos em destaque
           </h2>
@@ -56,12 +54,10 @@ export const Projects = () => {
               <img
                 src={reactgram}
                 alt="Reactgram"
-                className="mb-4 h-48 w-full cursor-pointer rounded-[1.5rem] object-cover"
+                className="mb-4 h-48 w-full cursor-pointer rounded-md object-cover"
                 onClick={() => openModal(reactgram)}
               />
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                Full stack
-              </p>
+              
               <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
                 Clique na imagem para ampliar
               </p>
@@ -71,8 +67,7 @@ export const Projects = () => {
               <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
                 Aplicação de rede social feita com React e Node.js, permitindo
                 cadastro de usuários, upload de fotos, curtidas, comentários e
-                feed de postagens. Back-end com autenticação JWT e integração
-                com banco de dados.
+                feed de postagens.
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {["React", "Node.js", "Express", "MongoDB", "JWT"].map(
@@ -108,12 +103,10 @@ export const Projects = () => {
               <img
                 src={miniblog}
                 alt="MiniBlog"
-                className="mb-4 h-48 w-full cursor-pointer rounded-[1.5rem] object-cover"
+                className="mb-4 h-48 w-full cursor-pointer rounded-md object-cover"
                 onClick={() => openModal(miniblog)}
               />
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                Conteudo e auth
-              </p>
+             
               <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
                 Clique na imagem para ampliar
               </p>
@@ -123,15 +116,13 @@ export const Projects = () => {
               <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
                 Blog minimalista feito com React e Firebase, com foco em CRUD de
                 posts, autenticação de usuários e uma interface simples,
-                responsiva e funcional. Conta com busca por tags, dashboard e
-                controle total dos conteúdos.
+                responsiva e funcional.
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {[
                   "React",
                   "Firebase",
                   "Tailwind CSS",
-                  "Firestore",
                   "Auth Firebase",
                 ].map((tech, key) => (
                   <span key={key} className={techClasses}>
@@ -164,12 +155,10 @@ export const Projects = () => {
               <img
                 src={cardapioImg}
                 alt="Cardápio Dev"
-                className="mb-4 h-48 w-full cursor-pointer rounded-[1.5rem] object-cover"
+                className="mb-4 h-48 w-full cursor-pointer rounded-md object-cover"
                 onClick={() => openModal(cardapioImg)}
               />
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                Java + React
-              </p>
+             
               <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
                 Clique na imagem para ampliar
               </p>
@@ -179,7 +168,7 @@ export const Projects = () => {
               <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
                 Sistema de cardápio digital com funcionalidades para visualizar,
                 cadastrar, editar e remover itens como pratos e bebidas,
-                integrado a um backend via requisições HTTP.
+                integrado a um backend.
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {[
@@ -219,12 +208,10 @@ export const Projects = () => {
               <img
                 src={encurtaImg}
                 alt="Encurta Dev"
-                className="mb-4 h-48 w-full cursor-pointer rounded-[1.5rem] object-cover"
+                className="mb-4 h-48 w-full cursor-pointer rounded-md object-cover"
                 onClick={() => openModal(encurtaImg)}
               />
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                Utilitario web
-              </p>
+             
               <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
                 Clique na imagem para ampliar
               </p>
@@ -280,7 +267,7 @@ export const Projects = () => {
           <img
             src={selectedImage}
             alt="Imagem ampliada"
-            className="max-w-full max-h-[90vh] rounded-lg border-4 border-white"
+            className="max-w-full max-h-[90vh] rounded-md border-4 border-white"
           />
         </div>
       )}

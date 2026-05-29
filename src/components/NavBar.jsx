@@ -8,6 +8,7 @@ export const NavBar = ({ menuOpen, setMenuOpen }) => {
     { href: "#projects", label: "Projetos" },
     { href: "#contact", label: "Contato" },
   ];
+  const [isAtTop, setIsAtTop] = useState(true);
 
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
@@ -33,8 +34,25 @@ export const NavBar = ({ menuOpen, setMenuOpen }) => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY === 0);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 z-40 w-full border-b border-slate-200/75 bg-white/75 backdrop-blur-xl dark:border-white/10 dark:bg-[rgba(6,16,23,0.72)]">
+    <nav
+      className={`fixed top-0 z-40 w-full transition-all duration-300 ${
+        isAtTop
+          ? "border-b border-transparent bg-transparent"
+          : "border-b border-slate-200/75 bg-white/75 backdrop-blur-xl dark:border-white/10 dark:bg-[rgba(6,16,23,0.72)]"
+      }`}
+    >
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <a
@@ -44,9 +62,7 @@ export const NavBar = ({ menuOpen, setMenuOpen }) => {
             <span className="font-mono text-xl font-bold tracking-tight">
               kauan<span className="text-[#0f5c73] dark:text-cyan-300">_</span>lima
             </span>
-            <span className="hidden rounded-full border border-slate-300/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500 md:inline-flex dark:border-white/10 dark:text-slate-400">
-              full stack
-            </span>
+            
           </a>
 
           {/* mobile toggle */}
@@ -91,7 +107,7 @@ export const NavBar = ({ menuOpen, setMenuOpen }) => {
               type="button"
               aria-label="Toggle Dark Mode"
               className="
-    rounded-full border border-[#0f5c73]/15 bg-[#0c4152] px-3 py-2 text-white
+    rounded-full border cursor-pointer border-[#0f5c73]/15 bg-[#0c4152] px-3 py-2 text-white
     transition hover:-translate-y-0.5 hover:bg-[#0f5c73]
     dark:border-cyan-300/20 dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200
     text-center w-auto
