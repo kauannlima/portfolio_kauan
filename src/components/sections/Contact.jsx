@@ -175,7 +175,6 @@ export const Contact = () => {
                           </p>
                         </div>
                       </div>
-                      
                     </a>
                   );
                 })}
