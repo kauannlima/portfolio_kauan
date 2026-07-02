@@ -153,7 +153,6 @@ export const Contact = () => {
               <div className="space-y-4">
                 {contactLinks.map((item) => {
                   const Icon = item.icon;
-
                   return (
                     <a
                       key={item.label}
