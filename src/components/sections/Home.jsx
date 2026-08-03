@@ -24,10 +24,8 @@ export const Home = () => {
           </h1>
 
           <p className="mx-auto mb-5 max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-300">
-            Sou Kauan Lima, desenvolvedor full stack formado em Análise e
-            Desenvolvimento de Sistemas. Meu foco está em construir aplicações
-            práticas, com estrutura sólida no back-end e uma camada visual que
-            sirva ao produto, não ao efeito.
+            Desenvolvedor Full Stack com foco em arquitetura de sistemas, desenvolvimento backend e construção de soluções escaláveis. Experiência com Java, Spring Boot, Go, Node.js, React, APIs REST, microsserviços e boas práticas de engenharia de software.
+
           </p>
 
         
