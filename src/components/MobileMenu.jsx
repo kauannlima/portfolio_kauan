@@ -42,9 +42,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         </a>
       ))}
 
-      <p className="mt-8 max-w-xs text-center text-sm leading-6 text-slate-400">
-        Portfolio com foco em projetos práticos, back-end consistente e UI sem excesso.
-      </p>
+    
     </div>
   );
 };
