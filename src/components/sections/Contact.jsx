@@ -71,8 +71,8 @@ export const Contact = () => {
           </h2>
 
           <p className="mx-auto mb-10 max-w-2xl text-center text-slate-600 dark:text-slate-300">
-            Se quiser trocar ideia sobre oportunidades, projetos ou estudos,
-            voce pode me chamar pelo formulario ou pelos canais abaixo.
+        Quer conversar sobre oportunidades, projetos ou tecnologia? Entre em contato pelo formulário ou pelos canais abaixo.
+
           </p>
 
           <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">

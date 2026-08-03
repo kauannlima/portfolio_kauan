@@ -2,22 +2,22 @@ import { BriefcaseBusiness, MoveUpRight, School } from "lucide-react";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
-  const frontendSkills = [
-    "React",
-    "Tailwind CSS",
-    "Bootstrap",
-    "TypeScript",
-    "JavaScript",
-  ];
+const frontendSkills = [
+  "React",
+  "TypeScript",
+  "JavaScript",
+  "Tailwind CSS",
+  "Vue.js"
+];
 
-  const backendSkills = [
-    "Java",
-    "Spring Boot",
-    "Apache Struts 2",
-    "Node.js",
-    "PostgreSQL",
-    "MySQL",
-  ];
+const backendSkills = [
+  "Java",
+  "Spring Boot",
+  "Go",
+  "Node.js",
+  "APIs REST",
+  "Microsserviços"
+];
 
   return (
     <section
@@ -39,8 +39,7 @@ export const About = () => {
           </h2>
 
           <p className="mx-auto mb-10 max-w-2xl text-center text-slate-600 dark:text-slate-300">
-            Trabalho melhor quando consigo unir regra de negocio, integracao e
-            uma interface objetiva, sem excesso visual.
+            Acredito em soluções que equilibram regras de negócio, integrações e interfaces objetivas, criando experiências funcionais sem excesso de complexidade visual.
           </p>
 
           <div
@@ -49,12 +48,9 @@ export const About = () => {
             "
           >
             <p className="mb-8 text-base leading-8 text-slate-700 dark:text-slate-300">
-              Tenho foco em desenvolvimento back-end com Java e Spring Boot,
-              assim como front-end com React. Estou constantemente estudando e
-              me aprimorando para me tornar um desenvolvedor fullstack completo.
-              Aplicando esses conhecimentos em projetos práticos e desafiadores,
-              construo um portfólio sólido que demonstra minha capacidade de
-              criar aplicações completas, eficientes e modernas.
+             Atuo no desenvolvimento Full Stack com foco em backend utilizando Java e Spring Boot, além da construção de aplicações frontend com React e TypeScript. Tenho experiência na criação de APIs, integrações entre sistemas e desenvolvimento de soluções escaláveis, aplicando boas práticas de engenharia de software e arquitetura.
+
+Busco constantemente evoluir tecnicamente, explorando novos desafios e construindo aplicações eficientes, modernas e alinhadas às necessidades reais dos usuários e do negócio.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -169,20 +165,18 @@ Universidade Católica de Santos (2023–2025)</p>
 
                 <div className=" flex flex-col  ">
                   <h4 className="font-semibold text-slate-900 dark:text-slate-100">
-                    Desenvolvedor Full Stack Júnior, Mamba Digital (2025–presente)
+                    Desenvolvedor Full Stack | Mamba Digital (2025 – presente)
                   </h4>
                   <p className=" leading-7 text-sm text-slate-700 dark:text-slate-300">
-                    Atuação no desenvolvimento full stack com Node.js, Golang e React, participando da criação de sistemas internos e CRM. Experiência com arquitetura de sistemas, bancos de dados, integração de serviços (RabbitMQ/Kafka)
-                  </p>
+Atuação no desenvolvimento e evolução de sistemas internos e CRM corporativo, utilizando Node.js, Go e React. Experiência com arquitetura de sistemas, modelagem de dados, integrações com serviços externos e soluções orientadas a eventos utilizando RabbitMQ e Kafka.                  </p>
                 </div>
 
                 <div className=" flex flex-col ">
                   <h4 className="font-semibold text-slate-900 dark:text-slate-100">
-                    Assistente de Help Desk em SOC Software de SST (2024–2025)
-                  </h4>
+Assistente de Suporte Técnico | SOC - Software de Saúde e Segurança do Trabalho (2024 – 2025)                  </h4>
                   <p className=" leading-7 text-sm text-slate-700 dark:text-slate-300">
-              Suporte ao cliente e análise de inconsistências no sistema, com abertura e acompanhamento de chamados. Apoio ao time de desenvolvimento, validação de regras de negócio e organização de demandas via Kanban.
-                  </p>
+Atuação no suporte técnico ao sistema, realizando análise de inconsistências, validação de regras de negócio e apoio ao time de desenvolvimento. 
+                 </p>
                 </div>
               </div>
             </div>
