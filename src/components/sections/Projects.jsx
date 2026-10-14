@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Code, ExternalLink } from "lucide-react";
 
 //Imagens
 import cardapioImg from "../../assets/projects/Cardapio-Dev.png";
 import encurtaImg from "../../assets/projects/Encurta-Dev.png";
-import miniblog from "../../assets/projects/Miniblog.png";
+import ansiedadeImg from "../../assets/projects/AnsiedadeDev.png";
 import reactgram from "../../assets/projects/ReactGram.png";
 
 export const Projects = () => {
@@ -19,52 +19,58 @@ export const Projects = () => {
     setSelectedImage(null);
   };
 
-  const techClasses = `
-    rounded-2xl border border-[#0f5c73]/15 bg-[#0f5c73]/8 px-3 py-1 text-sm text-[#0c4152]
-    transition hover:-translate-y-0.5 hover:border-[#0f5c73]/28 hover:bg-[#0f5c73]/12
-    dark:border-cyan-300/12 dark:bg-cyan-300/8 dark:text-cyan-100 dark:hover:border-cyan-300/25 dark:hover:bg-cyan-300/12
-  `;
+  useEffect(() => {
+    if (!selectedImage) return;
 
-  const projectCardClass =
-    "rounded-md border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-[#0f5c73]/20 dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)] dark:hover:border-cyan-300/18";
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage]);
+
+  const techClasses =
+    "rounded-md border border-line px-2.5 py-1 text-sm text-muted";
+
+  const projectCardClass = "rounded-md border border-line p-6";
 
   const linkClass =
-    "flex items-center gap-1 text-[#0c4152] transition-colors hover:text-[#0f5c73] dark:text-cyan-200 dark:hover:text-cyan-100";
+    "flex items-center gap-1 font-medium text-accent underline-offset-4 hover:underline";
 
   return (
     <section
       id="projects"
-      className="flex min-h-screen items-center justify-center bg-transparent py-24"
+      className="py-24"
     >
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
          
-          <h2 className="mb-4 bg-gradient-to-r from-[#0c4152] via-[#0f5c73] to-[#5a8ea0] bg-clip-text text-center text-3xl font-bold text-transparent dark:from-cyan-200 dark:via-cyan-300 dark:to-teal-300">
+          <h2 className="mb-10 text-4xl font-bold tracking-tight text-ink md:text-5xl">
             Projetos em destaque
           </h2>
-
-          <p className="mx-auto mb-10 max-w-2xl text-center text-slate-600 dark:text-slate-300">
-            Projetos que representam melhor meu momento atual: APIs, produtos
-            completos e aplicacoes com preocupacao real com fluxo e uso.
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* REACTGRAM */}
             <div className={projectCardClass}>
-              <img
-                src={reactgram}
-                alt="Reactgram"
-                className="mb-4 h-48 w-full cursor-pointer rounded-md object-cover"
+              <button
+                type="button"
                 onClick={() => openModal(reactgram)}
-              />
+                aria-label="Ampliar imagem de Reactgram"
+                className="mb-5 block w-full cursor-zoom-in"
+              >
+                <img
+                  src={reactgram}
+                  alt="Reactgram"
+                  className="h-48 w-full rounded-md border border-line object-cover"
+                />
+              </button>
               
-              <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
-                Clique na imagem para ampliar
-              </p>
-              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
+              <h3 className="mb-2 text-xl font-bold text-ink">
                 Reactgram
               </h3>
-              <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
+              <p className="mb-4 leading-7 text-muted">
                 Aplicação de rede social feita com React e Node.js, permitindo
                 cadastro de usuários, upload de fotos, curtidas, comentários e
                 feed de postagens.
@@ -78,7 +84,7 @@ export const Projects = () => {
                   )
                 )}
               </div>
-              <div className="flex flex-wrap gap-4 items-center my-4">
+              <div className="mt-5 flex flex-wrap items-center gap-5">
                 <a
                   href="https://github.com/kauannlima/reactgram-backend"
                   target="_blank"
@@ -98,74 +104,74 @@ export const Projects = () => {
               </div>
             </div>
 
-            {/* MINIBLOG */}
-            <div className={projectCardClass}>
-              <img
-                src={miniblog}
-                alt="MiniBlog"
-                className="mb-4 h-48 w-full cursor-pointer rounded-md object-cover"
-                onClick={() => openModal(miniblog)}
-              />
-             
-              <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
-                Clique na imagem para ampliar
-              </p>
-              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
-                MiniBlog
-              </h3>
-              <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
-                Blog minimalista feito com React e Firebase, com foco em CRUD de
-                posts, autenticação de usuários e uma interface simples,
-                responsiva e funcional.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {[
-                  "React",
-                  "Firebase",
-                  "Tailwind CSS",
-                  "Auth Firebase",
-                ].map((tech, key) => (
-                  <span key={key} className={techClasses}>
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-4 items-center my-4">
-                <a
-                  href="https://github.com/kauannlima/miniblog"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={linkClass}
-                >
-                  <Code size={16} /> GitHub
-                </a>
-                <a
-                  href="https://miniblog-ivory.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={linkClass}
-                >
-                  <ExternalLink size={16} /> Ver online
-                </a>
-              </div>
-            </div>
+        {/* ANSIEDADE.DEV */}
+<div className={projectCardClass}>
+  <button
+    type="button"
+    onClick={() => openModal(ansiedadeImg)}
+    aria-label="Ampliar imagem de ansiedade.dev"
+    className="mb-5 block w-full cursor-zoom-in"
+  >
+    <img
+      src={ansiedadeImg}
+      alt="ansiedade.dev"
+      className="h-48 w-full rounded-md border border-line object-cover"
+    />
+  </button>
+
+  <h3 className="mb-2 text-xl font-bold text-ink">
+    ansiedade.dev
+  </h3>
+  <p className="mb-4 leading-7 text-muted">
+    Timer online com experiências visuais que acompanham a contagem:
+    foguete, planta, tijolos e fotos. Funciona offline como PWA, sem
+    backend e sem cadastro, com tudo salvo no próprio navegador.
+  </p>
+  <div className="flex flex-wrap gap-2 mt-2">
+    {[
+      "Astro",
+      "React",
+      "TypeScript",
+      "CSS",
+      "PWA",
+      "Vitest",
+    ].map((tech, key) => (
+      <span key={key} className={techClasses}>
+        {tech}
+      </span>
+    ))}
+  </div>
+  <div className="mt-5 flex flex-wrap items-center gap-5">
+    <a
+      href="https://ansiedade.dev"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={linkClass}
+    >
+      <ExternalLink size={16} /> Acessar site
+    </a>
+  </div>
+</div>
 
             {/* CARDÁPIO DEV */}
             <div className={projectCardClass}>
-              <img
-                src={cardapioImg}
-                alt="Cardápio Dev"
-                className="mb-4 h-48 w-full cursor-pointer rounded-md object-cover"
+              <button
+                type="button"
                 onClick={() => openModal(cardapioImg)}
-              />
+                aria-label="Ampliar imagem de Cardápio Dev"
+                className="mb-5 block w-full cursor-zoom-in"
+              >
+                <img
+                  src={cardapioImg}
+                  alt="Cardápio Dev"
+                  className="h-48 w-full rounded-md border border-line object-cover"
+                />
+              </button>
              
-              <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
-                Clique na imagem para ampliar
-              </p>
-              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
+              <h3 className="mb-2 text-xl font-bold text-ink">
                 Cardápio Dev
               </h3>
-              <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
+              <p className="mb-4 leading-7 text-muted">
                 Sistema de cardápio digital com funcionalidades para visualizar,
                 cadastrar, editar e remover itens como pratos e bebidas,
                 integrado a um backend.
@@ -183,7 +189,7 @@ export const Projects = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-4 items-center my-4">
+              <div className="mt-5 flex flex-wrap items-center gap-5">
                 <a
                   href="https://github.com/kauannlima/backend-cardapio"
                   target="_blank"
@@ -205,20 +211,23 @@ export const Projects = () => {
 
             {/* ENCURTADEV */}
             <div className={projectCardClass}>
-              <img
-                src={encurtaImg}
-                alt="Encurta Dev"
-                className="mb-4 h-48 w-full cursor-pointer rounded-md object-cover"
+              <button
+                type="button"
                 onClick={() => openModal(encurtaImg)}
-              />
+                aria-label="Ampliar imagem de Encurta Dev"
+                className="mb-5 block w-full cursor-zoom-in"
+              >
+                <img
+                  src={encurtaImg}
+                  alt="Encurta Dev"
+                  className="h-48 w-full rounded-md border border-line object-cover"
+                />
+              </button>
              
-              <p className="mb-4 text-sm italic text-slate-500 dark:text-slate-400">
-                Clique na imagem para ampliar
-              </p>
-              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
+              <h3 className="mb-2 text-xl font-bold text-ink">
                 EncurtaDev
               </h3>
-              <p className="mb-4 leading-7 text-slate-700 dark:text-slate-300">
+              <p className="mb-4 leading-7 text-muted">
                 EncurtaDev é uma aplicação web para encurtar URLs com geração
                 automática de QR Codes, interface simples e integração com o
                 back-end.
@@ -236,7 +245,7 @@ export const Projects = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-4 items-center my-4">
+              <div className="mt-5 flex flex-wrap items-center gap-5">
                 <a
                   href="https://github.com/kauannlima/encurta-dev"
                   target="_blank"

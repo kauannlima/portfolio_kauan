@@ -1,6 +1,6 @@
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   const navItems = [
-    { href: "#home", label: "Inicio" },
+    { href: "#home", label: "Início" },
     { href: "#about", label: "Sobre" },
     { href: "#projects", label: "Projetos" },
     { href: "#contact", label: "Contato" },
@@ -8,41 +8,33 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 z-40 flex w-full flex-col items-center justify-center bg-[rgba(6,16,23,0.9)] backdrop-blur-xl
+      className={`fixed top-0 left-0 z-40 flex w-full flex-col justify-center overflow-hidden bg-paper px-6
         transition-all duration-300 ease-in-out
         ${
           menuOpen
             ? "h-screen opacity-100 pointer-events-auto"
-            : "h-0 opacity-0 pointer-events-none"
+            : "invisible h-0 opacity-0 pointer-events-none"
         }
       `}
     >
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute right-6 top-6 cursor-pointer text-3xl text-white focus:outline-none"
+        className="absolute right-6 top-4 cursor-pointer text-3xl text-ink"
         aria-label="Fechar o Menu"
       >
         &times;
       </button>
-
-      <div className="mb-8 rounded-full border border-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">
-        Navegacao
-      </div>
 
       {navItems.map((item) => (
         <a
           key={item.href}
           href={item.href}
           onClick={() => setMenuOpen(false)}
-          className={`my-4 transform text-2xl font-semibold tracking-[0.16em] text-white uppercase transition-transform duration-300 ${
-            menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }`}
+          className="border-b border-line py-5 text-3xl font-bold tracking-tight text-ink transition-colors hover:text-accent"
         >
           {item.label}
         </a>
       ))}
-
-    
     </div>
   );
 };

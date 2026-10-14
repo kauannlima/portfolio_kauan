@@ -7,11 +7,13 @@ export const RevealOnScroll = ({ children }) => {
     const oberserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          ref.current.classList.add("visible");
+          entry.target.classList.add("visible");
+          oberserver.disconnect();
         }
       },
       {
-        threshold: 0.2,
+        // threshold 0: seções mais altas que a tela (Projetos no celular) nunca chegavam a 20% visíveis
+        threshold: 0,
         rootMargin: "0px 0px -50px 0px",
       }
     );
@@ -19,7 +21,7 @@ export const RevealOnScroll = ({ children }) => {
     if (ref.current) oberserver.observe(ref.current);
 
     return () => oberserver.disconnect();
-  });
+  }, []);
 
   return (
     <div ref={ref} className="reveal">
