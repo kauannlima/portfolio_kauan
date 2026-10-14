@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
-import { MoveUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,8 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+  // idle | sending | sent | error
+  const [status, setStatus] = useState("idle");
 
   const contactLinks = [
     {
@@ -33,6 +35,7 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setStatus("sending");
 
     emailjs
       .sendForm(
@@ -42,144 +45,111 @@ export const Contact = () => {
         import.meta.env.VITE_PUBLIC_KEY
       )
       .then(() => {
-        alert("Mensagem enviada!");
+        setStatus("sent");
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch(() => alert("Ops! Algo deu errado. Por favor, tente novamente."));
+      .catch(() => setStatus("error"));
   };
 
+  // placeholder com cor própria: herdando do texto, o Chrome só repintava ao focar o campo depois de trocar o tema
+  const fieldClass =
+    "w-full rounded-md border border-line bg-surface px-4 py-3 text-ink placeholder:text-muted placeholder:opacity-100 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
+
   return (
-    <section
-      id="contact"
-      className="flex min-h-screen items-center justify-center bg-transparent py-24"
-    >
+    <section id="contact" className="py-24">
       <RevealOnScroll>
-        <div className="w-full max-w-5xl px-4">
-         {/* <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
-            Vamos conversar
-          </p>
-          */}
-          <h2
-            className="
-    mb-4 text-3xl font-bold
-    bg-gradient-to-r from-[#0c4152] via-[#0f5c73] to-[#5a8ea0]
-    dark:from-cyan-200 dark:via-cyan-300 dark:to-teal-300
-    bg-clip-text text-transparent text-center
-  "
-          >
+        <div className="mx-auto w-full max-w-5xl px-4">
+          <h2 className="mb-4 text-4xl font-bold tracking-tight text-ink md:text-5xl">
             Entre em contato
           </h2>
 
-          <p className="mx-auto mb-10 max-w-2xl text-center text-slate-600 dark:text-slate-300">
-        Quer conversar sobre oportunidades, projetos ou tecnologia? Entre em contato pelo formulário ou pelos canais abaixo.
-
+          <p className="mb-10 max-w-2xl text-lg leading-8 text-muted">
+            Tem uma vaga, um projeto ou só quer trocar ideia sobre tecnologia? Manda mensagem pelo formulário ou me chama direto no e-mail, LinkedIn ou GitHub.
           </p>
 
-          <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">
-            <form
-              className="space-y-6 rounded-md border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]"
-              onSubmit={handleSubmit}
-            >
-              <div className="flex gap-4"><input
-                type="text"
-                name="name"
-                id="name"
-                required
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-                placeholder="Seu nome"
-                className="
-                  w-full rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
-                  focus:outline-none focus:ring-2 focus:ring-[#0f5c73]/30
-                  dark:border-white/8 dark:bg-white/4 dark:text-slate-200
-                  dark:focus:ring-cyan-300/30
-                  transition
-                "
-              />
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                placeholder="Seu e-mail"
-                className="
-                  w-full rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
-                  focus:outline-none focus:ring-2 focus:ring-[#0f5c73]/30
-                  dark:border-white/8 dark:bg-white/4 dark:text-slate-200
-                  dark:focus:ring-cyan-300/30
-                  transition
-                "
-              /></div>
+          <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:gap-16">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  aria-label="Seu nome"
+                  autoComplete="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  placeholder="Seu nome"
+                  className={fieldClass}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  aria-label="Seu e-mail"
+                  autoComplete="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  placeholder="Seu e-mail"
+                  className={fieldClass}
+                />
+              </div>
               <textarea
                 name="message"
                 id="message"
+                aria-label="Sua mensagem"
                 required
                 rows={5}
                 value={formData.message}
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                placeholder="Conte um pouco sobre o que voce precisa"
-                className="
-                  w-full resize-none rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900
-                  focus:outline-none focus:ring-2 focus:ring-[#0f5c73]/30
-                  dark:border-white/8 dark:bg-white/4 dark:text-slate-200
-                  dark:focus:ring-cyan-300/30
-                  transition
-                "
+                placeholder="Conte um pouco sobre o que você precisa"
+                className={`${fieldClass} block resize-none`}
               />
               <button
                 type="submit"
-                className="
-                  w-full rounded-xl bg-[#0c4152] px-6 py-3 font-medium text-white
-                  transition hover:-translate-y-0.5 hover:bg-[#0f5c73]
-                  dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200
-                "
+                disabled={status === "sending"}
+                className="w-full cursor-pointer rounded-md bg-accent px-6 py-3 font-medium text-on-accent transition-opacity hover:opacity-85 disabled:cursor-default disabled:opacity-60"
               >
-                Enviar mensagem
+                {status === "sending" ? "Enviando mensagem" : "Enviar mensagem"}
               </button>
+
+              <p role="status" className="min-h-6 text-sm text-muted">
+                {status === "sent" && "Mensagem enviada. Respondo assim que puder."}
+                {status === "error" &&
+                  "A mensagem não foi enviada. Tente de novo ou escreva direto para o e-mail ao lado."}
+              </p>
             </form>
 
-            <div className="rounded-md border border-slate-200/80 bg-white/82 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] dark:border-white/8 dark:bg-[rgba(17,26,32,0.82)]">
-              <p className="mb-6 text-xs font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">
-                Contato direto
-              </p>
-              <div className="space-y-4">
-                {contactLinks.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      target={item.href.startsWith("http") ? "_blank" : undefined}
-                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="group flex items-start justify-between gap-4 rounded-md border border-slate-200/80 bg-slate-50/80 p-4 transition hover:-translate-y-0.5 hover:border-[#0f5c73]/20 hover:bg-white dark:border-white/8 dark:bg-white/4 dark:hover:border-cyan-300/20 dark:hover:bg-white/6"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="mt-0.5 rounded-md bg-[#0f5c73]/10 p-3 text-[#0c4152] dark:bg-cyan-300/10 dark:text-cyan-200">
-                          <Icon size={18} />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                            {item.label}
-                          </p>
-                          <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                            {item.value}
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  );
-                })}
-              </div>
-
-             
+            <div>
+              {contactLinks.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="group flex items-center gap-4 border-t border-line py-4 last:border-b"
+                  >
+                    <Icon size={18} className="shrink-0 text-accent" />
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-ink">
+                        {item.label}
+                      </p>
+                      <p className="break-words text-sm text-muted transition-colors group-hover:text-accent">
+                        {item.value}
+                      </p>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -2,6 +2,37 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Paleta: trocar os valores aqui muda o site inteiro. */
+:root {
+  --paper: #f4f7f8;
+  --surface: #ffffff;
+  --ink: #10242b;
+  --muted: #4a5f68;
+  --line: #d5dfe3;
+  --accent: #0f5c73;
+  --on-accent: #ffffff;
+}
+
+.dark {
+  --paper: #0b1a20;
+  --surface: #11242c;
+  --ink: #e3ecef;
+  --muted: #93a7b0;
+  --line: #1e323b;
+  --accent: #7fc4d4;
+  --on-accent: #0b1a20;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+}
+
 html,
 body {
   margin: 0;
@@ -15,76 +46,12 @@ html {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top, rgba(15, 92, 115, 0.12), transparent 35%),
-    radial-gradient(circle at 85% 20%, rgba(148, 163, 184, 0.2), transparent 28%),
-    linear-gradient(180deg, #f8fbfc 0%, #eff4f6 48%, #f8fafc 100%);
-  color: #0f172a;
-}
-
-.dark body {
-  background:
-    radial-gradient(circle at top, rgba(34, 211, 238, 0.1), transparent 30%),
-    radial-gradient(circle at 80% 10%, rgba(20, 184, 166, 0.08), transparent 24%),
-    linear-gradient(180deg, #061017 0%, #09141c 46%, #020617 100%);
-  color: #e2e8f0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 85%);
-  opacity: 0.35;
-}
-
-.dark body::before {
-  background-image: linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-  opacity: 0.25;
+  background: var(--paper);
+  color: var(--ink);
 }
 
 #root {
   min-height: 100vh;
-}
-
-.app-shell {
-  position: relative;
-  isolation: isolate;
-  overflow: clip;
-}
-
-@layer utilities {
-  @keyframes blink {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-  }
-
-  .animate-blink {
-    animation: blink 0.8s step-end infinite;
-  }
-
-  @keyframes loading {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(250%);
-    }
-  }
-
-  .animate-loading-bar {
-    animation: loading 0.8s ease infinite;
-  }
 }
 
 .reveal {
@@ -97,4 +64,29 @@ body::before {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
